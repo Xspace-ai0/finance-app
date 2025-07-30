@@ -1,4 +1,5 @@
 /*
+
  * Finansal Planlama Uygulaması JavaScript dosyası.
  * Bu dosya, kullanıcı etkileşimlerini yönetir, verileri tarayıcının
  * localStorage'ında saklar ve gösterge paneli ile diğer bölümleri
@@ -402,5 +403,41 @@ function handleGoalContribution(event) {
       renderGoals();
       renderDashboard();
     }
+  }
+
+
+
+
+}
+
+// Delete the last transaction from the list
+function deleteLastTransaction() {
+  if (data.transactions.length > 0) {
+    const lastId = data.transactions[data.transactions.length - 1].id;
+    deleteTransaction(lastId);
+  }
+}
+
+// Delete the last category from the list
+function deleteLastCategory() {
+  if (data.categories.length > 0) {
+    const lastId = data.categories[data.categories.length - 1].id;
+    deleteCategory(lastId);
+  }
+}
+
+// Delete the last budget from the list
+function deleteLastBudget() {
+  if (data.budgets.length > 0) {
+    const lastId = data.budgets[data.budgets.length - 1].id;
+    deleteBudget(lastId);
+  }
+}
+
+// Delete the last goal from the list
+function deleteLastGoal() {
+  if (data.goals.length > 0) {
+    const lastId = data.goals[data.goals.length - 1].id;
+    deleteGoal(lastId);
   }
 }
